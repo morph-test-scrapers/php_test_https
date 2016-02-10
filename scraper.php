@@ -7,13 +7,12 @@ require 'scraperwiki/simple_html_dom.php';
 
 // Read in a page
 $html = scraperwiki::scrape("https://ecouncil.wollondilly.nsw.gov.au/eservice/dialog/daEnquiryInit.do?nodeNum=40801");
-var_dump($html);
 
-// // Find something on the page using css selectors
-// $dom = new simple_html_dom();
-// $dom->load($html);
-// print_r($dom->find("table.list"));
-//
+// Find something on the page using css selectors
+$dom = new simple_html_dom();
+$dom->load($html);
+print_r($dom->find("head"));
+
 // // Write out to the sqlite database using scraperwiki library
 // scraperwiki::save_sqlite(array('name'), array('name' => 'susan', 'occupation' => 'software developer'));
 //
